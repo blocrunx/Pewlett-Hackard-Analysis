@@ -173,3 +173,17 @@ ON (e.emp_no = de.emp_no)
 INNER JOIN departments AS d
 ON (de.dept_no = d.dept_no)
 WHERE de.dept_no = 'd007';
+
+-- Get f-name, l_name, emp_no and department name for all 
+-- sales and development departments
+SELECT e.emp_no,
+	   e.first_name,
+	   e.last_name,
+       d.dept_name	
+FROM employees as e
+INNER JOIN dept_emp AS de
+ON (e.emp_no = de.emp_no)
+INNER JOIN departments AS d
+ON (de.dept_no = d.dept_no)
+WHERE de.dept_no IN ('d007', 'd005')
+ORDER BY last_name;
