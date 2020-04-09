@@ -187,3 +187,40 @@ INNER JOIN departments AS d
 ON (de.dept_no = d.dept_no)
 WHERE de.dept_no IN ('d007', 'd005')
 ORDER BY last_name;
+
+-- CHALLENGE QUERY 1 - inner employee, titels, salaries
+-- returning emp_no, first_name, last_name, title, salary
+SELECT e.emp_no,
+	   e.first_name,
+	   e.last_name,
+	   ti.title,
+	   ti.from_date,
+	   s.salary
+FROM employees AS e
+INNER JOIN titles AS ti
+ON (e.emp_no = ti.emp_no)
+INNER JOIN salaries AS S
+ON (e.emp_no = s.emp_no);
+
+-- Challenge query 2 - remove duplicate names:
+-- showing full table with duplicates
+SELECT * FROM
+(SELECT *, count(*) 
+OVER (PARTITION BY
+      first_name,
+      last_name
+    ) AS count
+  FROM emp_title_salary) tableWithCount
+  WHERE tableWithCount.count > 1;
+
+  -- Removing duplicate names:
+  ALTER TABLE emp_title_salary ADD id SERIAL;
+DELETE FROM emp_title_salary WHERE emp_title_salary.id NOT IN 
+(SELECT id FROM (SELECT DISTINCT ON (first_name, last_name) * FROM emp_title_salary) AS foo);
+
+-- Return and create table with count of department type and date ordered by decending:
+CREATE TABLE emp_dept_count AS
+SELECT * FROM (SELECT *, count(*) 
+OVER (PARTITION BY title) AS count
+FROM emp_title_salary) tableWithCount
+ORDER BY from_date DESC;
