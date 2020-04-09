@@ -225,8 +225,8 @@ OVER (PARTITION BY title) AS count
 FROM emp_title_salary) tableWithCount
 ORDER BY from_date DESC;
 
--- Return employee number, first and last name, title, from and to date, 
--- with birthdays in 1965 for current employees
+-- CHALLENGE QUERY 3: Return employee number, first and last name, title,  
+-- from and to date, with birthdays in 1965 for current employees
 SELECT e.emp_no,
 	   e.first_name,
 	   e.last_name,
