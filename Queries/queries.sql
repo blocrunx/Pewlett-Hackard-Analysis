@@ -224,3 +224,19 @@ SELECT * FROM (SELECT *, count(*)
 OVER (PARTITION BY title) AS count
 FROM emp_title_salary) tableWithCount
 ORDER BY from_date DESC;
+
+-- Return employee number, first and last name, title, from and to date, 
+-- with birthdays in 1965 for current employees
+SELECT e.emp_no,
+	   e.first_name,
+	   e.last_name,
+	   ti.title,
+	   de.from_date,
+	   de.to_date
+FROM employees AS e
+INNER JOIN titles AS ti
+ON (e.emp_no = ti.emp_no)
+INNER JOIN dept_emp AS de
+ON (e.emp_no = de.emp_no)
+WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+AND (de.to_date = '9999-01-01')
