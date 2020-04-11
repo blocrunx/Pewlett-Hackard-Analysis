@@ -41,7 +41,16 @@ The analysis showed that Pewlitt Hackard only has 1,549 employees who meet the m
 * Performance record
 * Attendance record
 
-Although Pewlett Hackard now has a working database, they should consider normalizing it in order to reduce the overall size, increase efficiency, and improve scalability. 
+Although Pewlett Hackard now has a working database, they should consider normalizing it in order to reduce the overall size, increase efficiency, and improve scalability. The following is the current Entity Relational Diagram of Pewlitt Hackards database:
 
+![ERD](erd/EmployeeDB.png)
 
-
+The following code was used to return the findings listed in the summary above:
+* Challenge Question 1:
+![CH1](code_snaps/1a.png)  
+* Challenge Question 2:
+![CH2](code_snaps/2ab.png) 
+* Challenge Question 3 a:
+![CH3a](code_snaps/3a.png) 
+* Challenge Question 3 b:
+![CH3b](code_snaps/3b.png) 
