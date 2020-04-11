@@ -1,5 +1,4 @@
 # Pewlett-Hackard-Analysis
-Converting Data Storage From csv to SQL
 
 ## Project Overview
 With the knowledge that many of their employees will be imminently retiring, Human Resources has asked for assistance identifying potential 
@@ -31,5 +30,17 @@ The analysis has found that pewlett hackard has 32, 859 employees who are approa
 * Technique Leader - 1,589
 * Assistant Engineer - 251
 * Manager - 2
+
+Human resources will have to take into account projected rate of growth when considering the total number of employees to hire. The total number of employees hired will be 32, 859 multiplied by the projected rate of growth. There will also need to be further analysis to determine internal departmental movement before we can make a conclusion about the number of hires required by each department.
+
+The analysis showed that Pewlitt Hackard only has 1,549 employees who meet the mentorship guidelines, therefore HR will need to either hire qualified individuals or expand their qualifying criteria for the mentorship program. Potential options to qualify more internal employees:
+* Length of employment
+* Length of time in a particular position
+* Education
+* Performance record
+* Attendence record
+
+Although Pewlett Hackard now has a working database, they should consider normalizing it in order to reduce overall size, increase efficiency, and improve scalability. 
+
 
 
