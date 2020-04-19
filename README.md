@@ -16,7 +16,7 @@ Having identified the number of people retiring in each department we can now id
 * Inner join employees to titles to return title, from_date, and to_date.
 
 ## Resources
-* Data Source departments.csv, dept_count.csv, dept_emp.csv, dept_manager.csv, employees.csv, retirement_info.csv, salaries.csv, title.csv
+* Data Source: departments.csv, dept_count.csv, dept_emp.csv, dept_manager.csv, employees.csv, retirement_info.csv, salaries.csv, title.csv
 * Languages: SQL
 * Software: pgAdmin 4.19
 * Database: PostgreSQL 11.7
